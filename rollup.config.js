@@ -1,18 +1,18 @@
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
-import istanbul from 'rollup-plugin-istanbul';
+import babel from 'rollup-plugin-babel'
+import babelrc from 'babelrc-rollup'
+import istanbul from 'rollup-plugin-istanbul'
 
-let pkg = require('./package.json');
-let external = Object.keys(pkg.dependencies);
+let pkg = require('./package.json')
+let external = Object.keys(pkg.dependencies)
 
 let plugins = [
-  babel(babelrc()),
-];
+  babel(babelrc())
+]
 
 if (process.env.BUILD !== 'production') {
   plugins.push(istanbul({
     exclude: ['test/**/*', 'node_modules/**/*']
-  }));
+  }))
 }
 
 export default {
@@ -32,4 +32,4 @@ export default {
       sourceMap: true
     }
   ]
-};
+}

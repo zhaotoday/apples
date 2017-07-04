@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
+    "build": "rollup -c --environment BUILD:production",
     "dev": "rollup -c -w"
   },
   "repository": {
@@ -13,7 +13,8 @@
     "url": "git+https://github.com/zhaotoday/rollup.git"
   },
   "keywords": [
-    "年rollup"
+    "npm",
+    "rollup"
   ],
   "author": "zhaojintian",
   "license": "ISC",
@@ -22,7 +23,10 @@
   },
   "homepage": "https://github.com/zhaotoday/rollup#readme",
   "devDependencies": {
+    "babelrc-rollup": "^3.0.0",
     "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-istanbul": "^1.1.0",
     "rollup-watch": "^4.0.0"
   }
 }
