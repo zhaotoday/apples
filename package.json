@@ -4,7 +4,9 @@
   "description": "use rollup to develop a npm package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/zhaotoday/rollup/issues"
   },
-  "homepage": "https://github.com/zhaotoday/rollup#readme"
+  "homepage": "https://github.com/zhaotoday/rollup#readme",
+  "devDependencies": {
+    "rollup": "^0.43.0",
+    "rollup-watch": "^4.0.0"
+  }
 }
