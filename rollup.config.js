@@ -16,19 +16,19 @@ if (process.env.BUILD !== 'production') {
 }
 
 export default {
-  entry: 'lib/index.js',
+  entry: 'src/index.js',
   plugins: plugins,
   external: external,
   targets: [
     {
-      dest: pkg.main,
+      dest: 'dist/a.js',
       format: 'umd',
       moduleName: 'rollupStarterProject',
       sourceMap: true
     },
     {
-      dest: pkg.module,
-      format: 'es',
+      dest: 'dist/b.js',
+      format: 'cjs',
       sourceMap: true
     }
   ]
