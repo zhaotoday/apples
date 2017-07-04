@@ -1,0 +1,22 @@
+{
+  "name": "rollup-npm",
+  "version": "1.0.0",
+  "description": "use rollup to develop a npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaotoday/rollup.git"
+  },
+  "keywords": [
+    "年rollup"
+  ],
+  "author": "zhaojintian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaotoday/rollup/issues"
+  },
+  "homepage": "https://github.com/zhaotoday/rollup#readme"
+}
