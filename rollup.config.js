@@ -1,18 +1,35 @@
+import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import babelrc from 'babelrc-rollup'
-import istanbul from 'rollup-plugin-istanbul'
+import resolve from 'rollup-plugin-node-resolve'
+import uglify from 'rollup-plugin-uglify'
 
-let pkg = require('./package.json')
-let external = Object.keys(pkg.dependencies)
+import postcss from 'rollup-plugin-postcss'
+import simplevars from 'postcss-simple-vars'
+import nested from 'postcss-nested'
+import cssnext from 'postcss-cssnext'
+import cssnano from 'cssnano'
 
-let plugins = [
-  babel(babelrc())
+const pkg = require('./package.json')
+const external = Object.keys(pkg.dependencies)
+const plugins = [
+  postcss({
+    plugins: [
+      simplevars(),
+      nested(),
+      cssnext({warnForDuplicates: false}),
+      cssnano()
+    ],
+    extensions: ['.css']
+  }),
+  commonjs(),
+  babel(babelrc()),
+  resolve(),
+  uglify()
 ]
 
 if (process.env.BUILD !== 'production') {
-  plugins.push(istanbul({
-    exclude: ['test/**/*', 'node_modules/**/*']
-  }))
+  // do something when build
 }
 
 export default {

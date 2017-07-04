@@ -1,5 +1,3 @@
-export default {
-  a () {
-    return 2
-  }
-}
+import './styles/index.css'
+
+export default 1
