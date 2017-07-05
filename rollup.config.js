@@ -38,13 +38,13 @@ export default {
   external: external,
   targets: [
     {
-      dest: 'dist/a.js',
+      dest: 'dist/index.js',
       format: 'umd',
-      moduleName: 'rollupStarterProject',
+      moduleName: 'day',
       sourceMap: true
     },
     {
-      dest: 'dist/b.js',
+      dest: 'dist/index.cjs.js',
       format: 'cjs',
       sourceMap: true
     }
