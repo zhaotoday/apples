@@ -22,9 +22,13 @@ const plugins = [
     ],
     extensions: ['.css']
   }),
+  resolve({
+    jsnext: true,
+    main: true,
+    browser: true
+  }),
   commonjs(),
   babel(babelrc()),
-  resolve(),
   uglify()
 ]
 
@@ -36,6 +40,9 @@ export default {
   entry: 'src/index.js',
   plugins: plugins,
   external: external,
+  globals: {
+    axios: 'axios'
+  },
   targets: [
     {
       dest: 'dist/index.js',
