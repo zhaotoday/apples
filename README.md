@@ -5,6 +5,7 @@ Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大�
 - [Rollup.js 官网](http://rollup.org/)
 - [Rollup.js 中文文档](https://rollup.bootcss.com/)
 - [Rollup 插件列表](https://github.com/rollup/rollup/wiki/Plugins)
+- [如何使用Rollup打包样式文件并添加LiveReload](http://www.w3cplus.com/javascript/learn-rollup-css.html)
 
 ## 使用
 ```bash
@@ -39,6 +40,12 @@ $ npm run stylelint
 在项目中使用 Babel，可以用上那些未被浏览器和 Node.js 支持的未来的 JavaScript 特性。
 ```bash
 npm install --save-dev rollup-plugin-babel babel-preset-latest babel-plugin-external-helpers
+```
+
+#### 5. rollup-plugin-postcss
+添加 PostCSS 支持。
+```bash
+npm install --save-dev rollup-plugin-postcss postcss-simple-vars postcss-nested postcss-cssnext cssnano
 ```
 
 ## 建议
