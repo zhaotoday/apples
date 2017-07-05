@@ -41,13 +41,13 @@ export default {
   plugins: plugins,
   external: external,
   globals: {
-    axios: 'axios'
+    'query-string': 'query-string'
   },
   targets: [
     {
       dest: 'dist/index.js',
       format: 'umd',
-      moduleName: 'day',
+      moduleName: 'urlParams',
       sourceMap: true
     },
     {

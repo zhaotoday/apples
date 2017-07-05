@@ -1,3 +1,6 @@
 import './styles/index.css'
+import qs from 'query-string'
 
-export default 1
+const urlParams = qs.parse(window.location.search)
+
+export default urlParams

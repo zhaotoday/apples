@@ -1,6 +1,6 @@
 {
   "name": "rollup-npm",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "use rollup to develop a npm package",
   "main": "dist/index.cjs.js",
   "scripts": {
@@ -48,6 +48,6 @@
     "stylelint-config-standard": "^16.0.0"
   },
   "dependencies": {
-    "axios": "^0.16.2"
+    "query-string": "^4.3.4"
   }
 }
