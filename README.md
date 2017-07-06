@@ -23,6 +23,12 @@ $ npm run eslint
 
 # 校验 CSS
 $ npm run stylelint
+
+# 登录 npm
+$ npm login
+
+# 发布包，请注意，如果非首次发布，需要修改 package.json 的版本字段（version）
+$ npm publish
 ```
 
 ## 相关包
@@ -48,6 +54,7 @@ npm install --save-dev rollup-plugin-babel babel-preset-latest babel-plugin-exte
 npm install --save-dev rollup-plugin-postcss postcss-simple-vars postcss-nested postcss-cssnext cssnano
 ```
 
-## 建议
+## 注意
 - 建议本地安装 Rollup，因为这样任何人克隆你的项目和运行 npm install 将会得到一个兼容的版本；
- 
+- 一般情况下，npm 包是打成 commonjs 规范的，请将 dependencies 依赖包配置到 external 和 globals 选项，以便与外部环境共用；
+- 如果需要打包成 umd 格式，请将 Rollup 配置选项 external 配置为 []，以便将所有 dependencies 依赖包打包进目标文件；

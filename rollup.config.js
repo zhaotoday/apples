@@ -41,17 +41,19 @@ export default {
   plugins: plugins,
   external: external,
   globals: {
-    'query-string': 'query-string'
+    qs: 'query-string'
   },
   targets: [
+    /*
+     {
+     dest: 'dist/index.js',
+     format: 'umd',
+     moduleName: 'urlParams',
+     sourceMap: true
+     },
+     */
     {
       dest: 'dist/index.js',
-      format: 'umd',
-      moduleName: 'urlParams',
-      sourceMap: true
-    },
-    {
-      dest: 'dist/index.cjs.js',
       format: 'cjs',
       sourceMap: true
     }
