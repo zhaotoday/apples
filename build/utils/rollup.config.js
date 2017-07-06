@@ -10,7 +10,7 @@ const cssnext = require('postcss-cssnext')
 const cssnano = require('cssnano')
 
 const {BUILD_FORMAT} = process.env
-const pkg = require('./package.json')
+const pkg = require('../../package.json')
 const external = Object.keys(pkg.dependencies)
 const plugins = [
   postcss({
@@ -43,7 +43,6 @@ if (process.env.BUILD !== 'production') {
 }
 
 module.exports = {
-  entry: 'src/index.js',
   plugins: plugins,
   external: external,
   globals: {

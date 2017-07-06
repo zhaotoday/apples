@@ -1,4 +1,3 @@
-//import './styles/index.css'
 import qs from 'query-string'
 
 const urlParams = qs.parse(window.location.search)
