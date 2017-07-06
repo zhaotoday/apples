@@ -9,8 +9,17 @@
     "eslint": "eslint src/**/*.js",
     "stylelint": "stylelint src/styles/**/*.css",
     "build": "rollup -c --environment BUILD:production",
+    "build-umd": "better-npm-run build:umd",
     "start": "node build/build.js",
     "dev": "rollup -c -w"
+  },
+  "betterScripts": {
+    "build:umd": {
+      "command": "node build/build.js",
+      "env": {
+        "BUILD_FORMAT": "umd"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -32,6 +41,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
+    "better-npm-run": "0.0.15",
     "cssnano": "^3.10.0",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
