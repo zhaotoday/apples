@@ -33,13 +33,13 @@ $ npm publish
 
 ## 相关包
 #### 1. rollup-watch
-源文件改变时，自动重新构建。
+用于源文件改变时，自动重新构建。
 
 #### 2. rollup-plugin-node-resolve
 指导 Rollup 如何去寻找外部的模块。
 
 #### 3. rollup-plugin-commonjs
-当下，大部份 npm 的程序包都被输出为 CommonJS 模块。在 Rollup 处理它们之前，我们都需要将 CommonJS 转成 ES2015。
+目前，大部份 npm 的程序包都被输出为 CommonJS 模块。在 Rollup 处理它们之前，需要将 CommonJS 转成 ES2015。
 > 注意 rollup-plugin-commonjs 应该在其它插件变换你的模块之前使用 - 这是为了避免其它插件做了一些改变，而这改变会破坏了 CommonJS 的检测。
 
 #### 4. rollup-plugin-babel

@@ -1,14 +1,14 @@
-import commonjs from 'rollup-plugin-commonjs'
-import babel from 'rollup-plugin-babel'
-import babelrc from 'babelrc-rollup'
-import resolve from 'rollup-plugin-node-resolve'
-import uglify from 'rollup-plugin-uglify'
+const commonjs = require('rollup-plugin-commonjs')
+const babel = require('rollup-plugin-babel')
+const babelrc = require('babelrc-rollup')
+const resolve = require('rollup-plugin-node-resolve')
+const uglify = require('rollup-plugin-uglify')
 
-import postcss from 'rollup-plugin-postcss'
-import simplevars from 'postcss-simple-vars'
-import nested from 'postcss-nested'
-import cssnext from 'postcss-cssnext'
-import cssnano from 'cssnano'
+const postcss = require('rollup-plugin-postcss')
+const simplevars = require('postcss-simple-vars')
+const nested = require('postcss-nested')
+const cssnext = require('postcss-cssnext')
+const cssnano = require('cssnano')
 
 const pkg = require('./package.json')
 const external = Object.keys(pkg.dependencies)
@@ -28,7 +28,9 @@ const plugins = [
     browser: true
   }),
   commonjs(),
-  babel(babelrc()),
+  babel({
+    exclude: 'node_modules/**' // 仅仅转译我们的源码
+  }),
   uglify()
 ]
 
@@ -36,7 +38,7 @@ if (process.env.BUILD !== 'production') {
   // do something when build
 }
 
-export default {
+module.exports =  {
   entry: 'src/index.js',
   plugins: plugins,
   external: external,

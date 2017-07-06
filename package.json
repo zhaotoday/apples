@@ -9,6 +9,7 @@
     "eslint": "eslint src/**/*.js",
     "stylelint": "stylelint src/styles/**/*.css",
     "build": "rollup -c --environment BUILD:production",
+    "start": "node build/build.js",
     "dev": "rollup -c -w"
   },
   "repository": {
@@ -45,7 +46,8 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.0.0",
     "stylelint": "^7.12.0",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "yargs": "^8.0.2"
   },
   "dependencies": {
     "query-string": "^4.3.4"
