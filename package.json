@@ -8,16 +8,20 @@
     "eslintfix": "eslint src/**/*.js --fix",
     "eslint": "eslint src/**/*.js",
     "stylelint": "stylelint src/styles/**/*.css",
-    "build": "rollup -c --environment BUILD:production",
-    "build-umd": "better-npm-run build:umd",
-    "start": "node build/build.js",
-    "dev": "rollup -c -w"
+    "dev": "better-npm-run dev",
+    "build": "better-npm-run build"
   },
   "betterScripts": {
-    "build:umd": {
-      "command": "node build/build.js",
+    "build": {
+      "command": "node build",
       "env": {
-        "BUILD_FORMAT": "umd"
+        "BUILD": "production"
+      }
+    },
+    "dev": {
+      "command": "node build",
+      "env": {
+        "BUILD": "development"
       }
     }
   },
@@ -42,6 +46,7 @@
     "babel-register": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
     "better-npm-run": "0.0.15",
+    "cli-color": "^1.2.0",
     "cssnano": "^3.10.0",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
@@ -57,6 +62,7 @@
     "rollup-watch": "^4.0.0",
     "stylelint": "^7.12.0",
     "stylelint-config-standard": "^16.0.0",
+    "watch": "^1.0.2",
     "yargs": "^8.0.2"
   },
   "dependencies": {

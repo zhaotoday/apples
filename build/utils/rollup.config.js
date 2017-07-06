@@ -9,7 +9,6 @@ const nested = require('postcss-nested')
 const cssnext = require('postcss-cssnext')
 const cssnano = require('cssnano')
 
-const {BUILD_FORMAT} = process.env
 const pkg = require('../../package.json')
 const external = Object.keys(pkg.dependencies)
 const plugins = [
@@ -34,18 +33,10 @@ const plugins = [
   uglify()
 ]
 
-let config = {
-  
-}
-
-if (process.env.BUILD !== 'production') {
-  // do something when build
-}
-
 module.exports = {
   plugins: plugins,
   external: external,
-  globals: {
-    qs: 'query-string'
-  }
+  globals: Object.keys(external).map((value) => {
+    return {[value]: value}
+  })
 }
