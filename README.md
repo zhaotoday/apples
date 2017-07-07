@@ -1,5 +1,5 @@
 ## 简介
-Rollup.js 支持多入口的构建方案，用于多个 library 共存的情况。
+Rollup.js 支持多入口的构建方案，用于多个 library 共存的情况，如工具库等。
 
 ## Rollup 介绍
 Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
