@@ -73,7 +73,7 @@ npm install --save-dev rollup-plugin-babel babel-preset-latest babel-plugin-exte
 npm install --save-dev rollup-plugin-postcss postcss-simple-vars postcss-nested postcss-cssnext cssnano
 ```
 
-## 注意
+## 一些建议
 - 建议本地安装 Rollup，这样任何人克隆你的项目和运行 npm install 将会得到一个兼容的版本；
 - 建议构建同时支持 UMD 和 CommonJS 格式，以满足所有调用场景：
   1. UMD 格式需要把依赖包打进目标文件；
