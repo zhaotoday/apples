@@ -1,4 +1,7 @@
-## Rollup 简介
+## 简介
+Rollup.js 支持多入口的构建方案，用于多个 library 共存的情况。
+
+## Rollup 介绍
 Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码，例如 library 或应用程序。
 
 ## 链接
@@ -13,10 +16,10 @@ Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大�
 $ git clone https://github.com/zhaotoday/rollup.git
 
 # 开发、调试
-$ npm run dev yourLibrary
+$ npm run dev myLibrary
 
 # 构建代码
-$ npm run build yourLibrary
+$ npm run build myLibrary
 
 # 校验 JS
 $ npm run eslint
@@ -31,15 +34,21 @@ $ npm login
 $ npm publish
 
 # 安装包
-$ npm install --save your-package
+$ npm install --save my-package
 ```
-```js
-// 引入 yourLibrary
-import yourLibrary from 'your-package/libs/yourLibrary'
 
-// 调用 yourLibrary 的方法
-yourLibrary.someFunc()
+```js
+// 引用 myLibrary
+import myLibrary from 'my-package/libs/myLibrary'
+
+// 调用 myLibrary 的方法
+myLibrary.someFunc()
 ```
+
+## library 的命名规范
+- 请在 src 目录下新建并开发你的 library，如案例的 urlParams 文件夹，其中 index.js 为入口文件；
+- 如果暴露的是个类或构造函数，请用小驼峰命名法 (little camel-case)，如：MyClass、MyConstructor；
+- 其他，请用大驼峰命名法 (big camel-case)：如：myLibrary
 
 ## 相关包
 #### 1. rollup-watch
@@ -49,7 +58,7 @@ yourLibrary.someFunc()
 指导 Rollup 如何去寻找外部的模块。
 
 #### 3. rollup-plugin-commonjs
-目前，大部份 npm 的程序包都被输出为 CommonJS 模块。在 Rollup 处理它们之前，需要将 CommonJS 转成 ES2015。
+大部份 npm 包都被输出为 CommonJS 模块，在 Rollup 处理它们之前，需要将 CommonJS 转成 ES2015。
 > 注意 rollup-plugin-commonjs 应该在其它插件变换你的模块之前使用 - 这是为了避免其它插件做了一些改变，而这改变会破坏了 CommonJS 的检测。
 
 #### 4. rollup-plugin-babel
@@ -66,7 +75,7 @@ npm install --save-dev rollup-plugin-postcss postcss-simple-vars postcss-nested 
 
 ## 注意
 - 建议本地安装 Rollup，这样任何人克隆你的项目和运行 npm install 将会得到一个兼容的版本；
-- 建议构建支持 UMD 和 CommonJS 格式：
+- 建议构建同时支持 UMD 和 CommonJS 格式，以满足所有调用场景：
   1. UMD 格式需要把依赖包打进目标文件；
   2. CommonJS 格式需要将依赖包申明为外部依赖。
 - 如果开发的是纯 JS 的 npm 包，请将 PostCSS 的相关插件去除（当然，保留着也无妨）。
