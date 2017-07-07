@@ -29,6 +29,15 @@ $ npm login
 
 # 发布包，请注意，如果非首次发布，需要修改 package.json 的版本字段（version）
 $ npm publish
+
+# 安装包
+$ npm install --save your-package
+```
+```js
+// import 包
+import yourLibrary from 'your-package/libs/yourLibrary'
+
+yourLibrary.someFunction()
 ```
 
 ## 相关包
