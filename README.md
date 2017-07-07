@@ -13,10 +13,10 @@ Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大�
 $ git clone https://github.com/zhaotoday/rollup.git
 
 # 开发、调试
-$ npm run dev
+$ npm run dev yourLibrary
 
 # 构建代码
-$ npm run build
+$ npm run build yourLibrary
 
 # 校验 JS
 $ npm run eslint
@@ -27,17 +27,18 @@ $ npm run stylelint
 # 登录 npm
 $ npm login
 
-# 发布包，请注意，如果非首次发布，需要修改 package.json 的版本字段（version）
+# 发布包，请注意，如果非首次发布，需要修改 package.json 的版本字段 version
 $ npm publish
 
 # 安装包
 $ npm install --save your-package
 ```
 ```js
-// import 包
+// 引入 yourLibrary
 import yourLibrary from 'your-package/libs/yourLibrary'
 
-yourLibrary.someFunction()
+// 调用 yourLibrary 的方法
+yourLibrary.someFunc()
 ```
 
 ## 相关包
@@ -64,7 +65,8 @@ npm install --save-dev rollup-plugin-postcss postcss-simple-vars postcss-nested 
 ```
 
 ## 注意
-- 建议本地安装 Rollup，因为这样任何人克隆你的项目和运行 npm install 将会得到一个兼容的版本；
-- 一般情况下，npm 包是遵循 commonjs 规范的，请将 package.json 的 dependencies 依赖包配置到 Rollup 的 external 和 globals 选项，以便与外部环境共用；
-- 如果需要将 npm 包打成 umd 格式，请将 Rollup 配置选项 external 配置为 []，以便将所有 package.json 的 dependencies 依赖包打包进目标文件；
-- 如果开发的是纯 JS 的 npm 包，请将 PostCSS 的相关插件去除（当然，也可以保留着）。
+- 建议本地安装 Rollup，这样任何人克隆你的项目和运行 npm install 将会得到一个兼容的版本；
+- 建议构建支持 UMD 和 CommonJS 格式：
+  1. UMD 格式需要把依赖包打进目标文件；
+  2. CommonJS 格式需要将依赖包申明为外部依赖。
+- 如果开发的是纯 JS 的 npm 包，请将 PostCSS 的相关插件去除（当然，保留着也无妨）。

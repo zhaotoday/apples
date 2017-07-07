@@ -11,8 +11,8 @@ const build = () => {
   libs.forEach((lib) => {
     // 按 UMD、CommonJS 规范构建
     ['umd', 'cjs'].forEach((format) => {
-      // UMD 格式需要把依赖包打进目标文件
-      // CommonJS 格式需要将依赖包申明为外部依赖
+      // UMD 需要把依赖包打进目标文件
+      // CommonJS 需要将依赖包申明为外部依赖
       rollup.rollup(Object.assign(
         // 公用配置
         {
@@ -47,7 +47,7 @@ if (!libs.length) {
   if (process.env.BUILD === 'production') {
     build()
   } else {
-    // 监听 src 文件夹文件变更
+    // 监听 src 文件夹下的文件变更
     watch.watchTree('src', (f, curr, prev) => {
       if (typeof f === 'object' && prev === null && curr === null) {
         notice.info('Start watching file changes, you can press "ctrl+c" to cancel.')
