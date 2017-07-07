@@ -47,8 +47,8 @@ myLibrary.someFunc()
 
 ## library 的命名规范
 - 请在 src 目录下新建并开发你的 library，如案例的 urlParams 文件夹，其中 index.js 为入口文件；
-- 如果暴露的是个类或构造函数，请用小驼峰命名法 (little camel-case)，如：MyClass、MyConstructor；
-- 其他，请用大驼峰命名法 (big camel-case)：如：myLibrary
+- 如果暴露的是个类或构造函数，请用大驼峰命名法 (big camel-case)，如：MyClass、MyConstructor；
+- 其他，请用小驼峰命名法 (little camel-case)：如：myLibrary
 
 ## 相关包
 #### 1. rollup-watch
