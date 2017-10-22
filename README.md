@@ -1,16 +1,10 @@
 ## 已包含的工具
-- helpers
-> [object] 辅助函数集合
-- I18N
-> [class] 基于 i18next 的国际化
-- time
-> [object] 格式化时间
-- storage
-> [object] 本地存储
-- REST (类)
-> [class] 遵循 RESTful 规范的接口请求类
-- urlParams
-> [object] 获取 URL 参数
+- helpers: [object] 辅助函数集合
+- I18N: [class] 基于 i18next 的国际化
+- time: [object] 格式化时间
+- storage: [object] 本地存储
+- REST: [class] 遵循 RESTful 规范的接口请求类
+- urlParams: [object] 获取 URL 参数
 
 ## 脚手架简介
 Rollup.js 支持多入口的构建方案，用于多个 library 共存的情况，如工具库等。
