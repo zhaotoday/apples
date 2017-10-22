@@ -1,6 +1,6 @@
 {
   "name": "apples",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "use rollup to develop a npm package",
   "main": "dist/index.cjs.js",
   "scripts": {
@@ -67,6 +67,8 @@
   },
   "dependencies": {
     "axios": "^0.17.0",
+    "date-format-lite": "^17.7.0",
+    "i18next": "^10.0.3",
     "query-string": "^4.3.4"
   }
 }
