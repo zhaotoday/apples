@@ -1,6 +1,6 @@
 {
-  "name": "rollup-npm",
-  "version": "1.0.6",
+  "name": "apples",
+  "version": "0.0.2",
   "description": "use rollup to develop a npm package",
   "main": "dist/index.cjs.js",
   "scripts": {
@@ -48,24 +48,25 @@
     "better-npm-run": "0.0.15",
     "cli-color": "^1.2.0",
     "cssnano": "^3.10.0",
-    "eslint": "^4.1.1",
+    "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
     "postcss-cssnext": "^2.11.0",
-    "postcss-nested": "^2.0.2",
-    "postcss-simple-vars": "^4.0.0",
-    "rollup": "^0.43.0",
+    "postcss-nested": "^2.1.2",
+    "postcss-simple-vars": "^4.1.0",
+    "rollup": "^0.43.1",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-commonjs": "^8.2.4",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-postcss": "^0.5.3",
+    "rollup-plugin-postcss": "^0.5.5",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^4.0.0",
-    "stylelint": "^7.12.0",
+    "rollup-watch": "^4.3.1",
+    "stylelint": "^7.13.0",
     "stylelint-config-standard": "^16.0.0",
     "watch": "^1.0.2",
     "yargs": "^8.0.2"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "query-string": "^4.3.4"
   }
 }
